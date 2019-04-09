@@ -37,4 +37,9 @@ git rebase -i origin/master
 ## 命令清单
 我每天使用 Git ，但是很多命令记不住  
 一般来说，日常使用只要记住下图6个命令就可以了，但是熟练使用，恐怕要记住60~100个命令。
-![git常用命令](../assert/git常用命令.png)
+![git常用命令](../assert/git常用命令.png)  
+几个专用名词如下
++ WorkSpace : 工作区
++ Index / Stage : 暂存区
++ Repository : 仓库区(或本地仓库)
++ Remote : 远程仓库 
