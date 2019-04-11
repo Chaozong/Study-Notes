@@ -17,3 +17,20 @@ spring init --list
 spring init --dependencies=web,data-jpa myproject
 ```
 这样就会得到myproject项目了
+
+运行一个简单的RESTful服务  
+新建一个hello.groovy文件
+```
+@RestController
+public class HelloController {
+
+    @RequestMapping(value = "/hello")
+    public String sayHello() {
+        return "Hello，Spring Boot！";
+    }
+}
+```
+然后执行下面指令，进行编译运行应用：
+```
+spring run hello.groovy
+```
