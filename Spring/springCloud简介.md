@@ -1,6 +1,7 @@
 # SpringCloud简介
 >[demo演示地址](https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/README-zh.md)  
-[官方文档](https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/README-zh.md)
+[官方文档](https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/README-zh.md)  
+
 ## 一、是什么
 springCloud是基于SpringBoot的一整套实现微服务的框架。他提供了微服务开发所需的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等组件。
 简单来说，springCloud是一个用于**微服务的平台**，提供了各种各样微服务所需的组件

@@ -7,3 +7,21 @@
 
 ## SpringBoot Starter简介
 经常在springboot项目的pom.xml依赖里有spring-boot-starter-web、mybatis-spring-boot-starter等模块,实际上这些Starter本身就是一个独立的maven项目，里面包含了所依赖的jar包，并且在该项目中写好各个依赖的关系，这样的话，再引入starter时就不用自己手动配置了(也可以定制自己的starter)
+
+## 自动配置原理简介
+[参考原文链接](https://www.cnblogs.com/trgl/p/7353782.html)  
++ 关键字
+    1. 配置文件META-INF/spring.factories：实际上遵循了springboot提供的一些接口，配置具体实现的实现类,打开该文件可以看到是Key-value形式的配置,一般key是springboot、spring的接口名或注解名,value就是其接口和注解的具体实现类了
+    2. 观察者模式,根据META-INF/spring.factories下默认提供的一些监听器接口(具体是什么东西在监听springboot启动有待研究)，在启动springboot时: 
+        1. 遍历这些监听器并发出第一次通知(started()方法)
+        2. 创建springboot最终使用的Envirnoment运行环境
+        3. 再次发出通知(environmentPrepared()方法),发出springboot运行环境准备就绪的消息
+        4. 最后推断出，springboot到底创建什么样的ApplicaionContext,是web应用还是什么应用,并根据之前准备好的Environment提供给这个ApplicaionContext
+        5. 再次借助Spring-FactoriesLoader,查找所有对ApplicaionContext进行进一步处理的监听器,并进行通知(contextPrepared()方法)
+        6. 根据用户注解等配置形式的配置内容,整合到上述准备完毕的ApplicatonContext中(核心)
+        7. 最后使用一组监听器发布通知，ApplicationContext已经加载完毕，各位可以结束手头的工作了
+        8. 调用ApplicationContext的refresh()完成最终启动。
+
++ 总结  
+    springboot本质上，还是spring的概念。所谓的自动配置，只是从以往的开发经验和场景中抽取出来的一些固化的、约定俗成的规则,需要开发者遵循默认规则，springboot中这些默认的启动方式才会有作用        
+                  
