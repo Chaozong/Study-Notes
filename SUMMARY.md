@@ -13,3 +13,4 @@
 * 其它工具
     * [gitbook使用](Tools/gitbook的使用.md)
     * [git常用命令](Tools/git常用命令.md)
+    * [IDEA Evaluate Expression计算表达式用法](Tools/Evaluate-Expression计算表达式用法.md)
