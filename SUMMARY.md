@@ -17,3 +17,4 @@
     * [git常用命令](Tools/git常用命令.md)
     * [IDEA Evaluate Expression计算表达式用法](Tools/Evaluate-Expression计算表达式用法.md)
     * [mysql 解压版安装配置方法(5.7版本)](Tools/mysql解压版安装配置方法.md)
+    * [maven构建多模块项目](Tools/maven构建多模块项目.md)
