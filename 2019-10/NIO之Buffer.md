@@ -30,4 +30,4 @@
 完成这样的一次读写之后，再执行以下clear()函数使当前这个Buffer回归到初始状态
 
 ### 总结
-Buffer模块本质是一个数组，定义并维护position、limit、capacity等状态来实现块IO的读写方式
+Buffer模块本质是一个数组，定义并维护position、limit、capacity等状态来实现块IO的读写方式，由于基于Buffer的IO方式是读写双向进行的，每次读/写操作开始时，一定要记得flip锁定读取区域；完成后，一定要记得clear重置。这样可以防止读写数据的错乱
