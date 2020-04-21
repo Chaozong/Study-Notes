@@ -25,6 +25,8 @@
     * [幂等性是什么意思](2019-10/幂等性是什么意思.md)
     * [IO、NIO的理解](2019-10/IO、NIO的理解.md) 
     * [NIO之Buffer](2019-10/NIO之Buffer.md)
+* 2020-04
+    * [synchronized锁定的到底是什么？](2020-04/synchronized锁定的到底是什么.md)    
 * 2020-03
     * [NIO之Selector](2020-03/NIO之Selector.md)           
 * 其它工具
