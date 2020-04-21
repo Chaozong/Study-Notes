@@ -20,7 +20,7 @@ while (true) {
   //检查keys中所有事件的类型
   while (it.hasNext()) {
     SelectionKey key = (SelectionKey) it.next();
-    //未监听到就绪事件
+    //未监听到就绪事件，可以将连接设置为OP_READ再次注册到selector,仅当数据已经可读时再处理
     if ((key.readyOps() & SelectionKey.OP_ACCEPT) == SelectionKey.OP_ACCEPT) {
       ServerSocketChannel ssChannel = (ServerSocketChannel) key.channel();
       SocketChannel sc = ssChannel.accept();//接受到服务端的请求
@@ -28,7 +28,7 @@ while (true) {
       sc.register(selector, SelectionKey.OP_READ);
       it.remove();
     }
-    //监听到就绪事件
+    //监听到就绪事件,当channel可以读取的时候，这时来处理数据
     else if ((key.readyOps() & SelectionKey.OP_READ) == SelectionKey.OP_READ) {
       SocketChannel sc = (SocketChannel) key.channel();
       while (true) {
