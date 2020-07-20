@@ -4,6 +4,7 @@
 “锁”本身是个对象，synchronized这个关键字不是“锁”,一般就是对象上有几个字节标识当前哪个线程得到了锁的标志位(类似信号量的机制)
 ![synchronized锁定示意图1](../assert/synchronized锁定示意图1.jpg)
 ![synchronized锁定示意图2](../assert/synchronized锁定示意图2.jpg)
+![synchronized锁定示意图3](../assert/synchronized锁定示意图3.jpg)
 
 所以，所谓的加锁，严格意义上不是锁住代码块,而是标识是否需要进行“读锁”操作
 
